@@ -5,8 +5,6 @@ body {
 	font-size: 14px;
 	line-height: 20px;
 	width: 100%;
-    padding-top: 54px;
-    background-color: #f5f5f5;
 }
 /*h1, h2, h3, h4, h5, h6 {
 	color: #444;
@@ -90,14 +88,27 @@ header {
 /* end header */
 /* top */
 #top {
-	background-color: #EEEEEE;
-	border-bottom: 1px solid #e2e2e2;
-	padding: 4px 0px 3px 0;
-	margin: 0 0 20px 0;
-	min-height: 40px;
+	background-color: #FFFFFF;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+#top .name-store {
+    color: #4eac42;
+    font-size: 30px;
+    font-weight: bold;
+}
+#top .telephone {
+    position: relative;
+}
+#top .telephone p {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: #FFFFFF;
+    font-size: 24px;
 }
 #top .container {
-	padding: 0 20px;
 }
 #top #form-currency .currency-select,
 #top #form-language .language-select {

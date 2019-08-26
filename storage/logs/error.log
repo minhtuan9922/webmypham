@@ -1,3 +1,44 @@
 2019-08-18 16:34:40 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\webphi\system\library\mail\mail.php on line 77
 2019-08-18 18:33:01 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\webphi\system\library\mail\mail.php on line 77
 2019-08-18 18:33:03 - PHP Warning:  mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set() in C:\xampp\htdocs\webphi\system\library\mail\mail.php on line 77
+2019-08-24 15:50:05 - PHP Warning:  include_once(C:\xampp\htdocs\webmypham\catalog\controller\common\header.php): failed to open stream: Resource temporarily unavailable in C:\xampp\htdocs\webmypham\storage\modification\system\engine\action.php on line 69
+2019-08-24 15:50:05 - PHP Warning:  include_once(): Failed opening 'C:/xampp/htdocs/webmypham/catalog/controller/common/header.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\webmypham\storage\modification\system\engine\action.php on line 69
+2019-08-25 15:13:09 - PHP Notice:  Undefined index: description in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 508
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:55:00 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218
+2019-08-25 15:57:49 - PHP Notice:  Undefined variable: path in C:\xampp\htdocs\webmypham\catalog\controller\common\home.php on line 218

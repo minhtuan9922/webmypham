@@ -27,6 +27,9 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<link rel="stylesheet" href="catalog/view/javascript/owlcarousel/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="catalog/view/javascript/owlcarousel/assets/owl.theme.default.min.css">
+<script src="catalog/view/javascript/owlcarousel/owl.carousel.min.js"></script>
 {% for style in styles %}
 <link href="{{ style.href }}" type="text/css" rel="{{ style.rel }}" media="{{ style.media }}" />
 {% endfor %}
@@ -108,13 +111,13 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ home }}">TRANG CHỦ</a>
+                            <a class="nav-link text-white" href="{{ home }}">TRANG CHỦ</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ aboutus }}">GIỚI THIỆU</a>
+                            <a class="nav-link text-white" href="{{ aboutus }}">GIỚI THIỆU</a>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Danh mục</a>
+                            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">DANH MỤC</a>
                             <div class="dropdown-menu menu-drop" aria-labelledby="navbarDropdown">
                                 {% if categories %}
                                 {% for category in categories %}
@@ -127,21 +130,26 @@
                                 {% endif %}
                             </div>
                         </li>
+<!--
                         <li class="nav-item">
                             <a class="nav-link" href="{{ special }}">Khuyễn mãi</a>
                         </li>
+-->
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ news }}">Tin tức</a>
+                            <a class="nav-link text-white" href="{{ news }}">TIN TỨC</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white" href="{{ contact }}">LIÊN HỆ</a>
                         </li>
                     </ul>
                     {{ search }}
                     <ul class="navbar-nav ml-auto">
                         {{ cart }}
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ login }}">Đăng nhập</a>
+                            <a class="nav-link" href="{{ login }}">ĐĂNG NHẬP</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ register }}">Đăng ký</a>
+                            <a class="nav-link" href="{{ register }}">ĐĂNG KÝ</a>
                         </li>
                     </ul>
                 </div>

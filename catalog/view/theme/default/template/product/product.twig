@@ -120,7 +120,7 @@
                 {% set class = 'col-sm-4' %}
                 {% endif %}
                 <div class="{{ class }}">
-                    <div class="btn-group">
+                    <div class="btn-group" hidden="">
                         <button type="button" data-toggle="tooltip" class="btn btn-default" title="{{ button_wishlist }}" onclick="wishlist.add('{{ product_id }}');"><i class="fa fa-heart"></i></button>
                         <button type="button" data-toggle="tooltip" class="btn btn-default" title="{{ button_compare }}" onclick="compare.add('{{ product_id }}');"><i class="fa fa-exchange"></i></button>
                     </div>
@@ -150,9 +150,9 @@
                         {% if tax %}
                         <li>{{ text_tax }} {{ tax }}</li>
                         {% endif %}
-                        {% if points %}
+                        {# {% if points %}
                         <li>{{ text_points }} {{ points }}</li>
-                        {% endif %}
+                        {% endif %} #}
                         {% if discounts %}
                         <li>
                             <hr>

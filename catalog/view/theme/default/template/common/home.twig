@@ -1,4 +1,137 @@
 {{ header }}
+<div class="home-banner">
+    <div id="demo" class="carousel slide" data-ride="carousel"> 
+        <!-- Indicators -->
+        <ul class="carousel-indicators">
+            {% if banners %}
+            {% for key, item in banners %}
+            <li data-target="#demo" data-slide-to="{{ key }}" class="{%if key == '0' %}active{% endif %}"></li>
+            {% endfor %}
+            {% endif %}
+        </ul>
+
+        <!-- The slideshow -->
+        <div class="carousel-inner">
+            {% if banners %}
+            {% for key, item in banners %}
+            <div class="carousel-item {% if key == '0' %}active{% endif %}"> 
+                {% if item.link %}
+                <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.title }}" class="img-fluid"></a>
+                {% else %}
+                <img src="{{ item.image }}" alt="{{ item.title }}" class="img-fluid"> 
+                {% endif %}
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+
+        <!-- Left and right controls --> 
+        <a class="carousel-control-prev" href="#demo" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <span class="carousel-control-next-icon"></span> </a> 
+    </div>
+</div>
+<div class="container">
+    <div class="spacer40"></div>
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h4 class="text-green"><strong>{{ title }}</strong></h4>
+            <p>{{ description_about }}</p>
+            <a href="{{ aboutus }}" class="btn bg-green text-white">Xem thêm <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+        </div>
+        <div class="col-md-6 d-none d-md-block">
+            <div class="box-img">
+                <div id="slide-img1" class="carousel slide" data-ride="carousel"> 
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"> 
+                            <img src="image/3581155250717451.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717453.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717452.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717450.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717454.jpg" alt="" class="img-fluid"> 
+                        </div>
+                    </div>
+                </div>
+                <div id="slide-img2" class="carousel slide" data-ride="carousel"> 
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"> 
+                            <img src="image/3581155250717450.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717454.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717451.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717453.jpg" alt="" class="img-fluid"> 
+                        </div>
+                        <div class="carousel-item"> 
+                            <img src="image/3581155250717452.jpg" alt="" class="img-fluid"> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer40"></div>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4 class="text-center text-green"><strong>Danh mục sản phẩm</strong></h4>
+        </div>
+        <div class="col-sm-12">
+            <div class="box-category">
+                {% for item in categories %}
+                <div class="category-item text-center">
+                    <a href="{{ item.href }}">    
+                        <img src="{{ item.image }}">
+                        <p>{{ item.name }}</p>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+<div class="spacer40"></div>
+<div class="product-random">
+    <div class="container">
+        <h4 class="text-center text-green"><strong>Sản phẩm nổi bật</strong></h4>
+        <div class="owl-carousel owl-theme">
+            {% for product in products_rand %}
+            <div class="product-item item">
+                <div class="product-thumb">
+                    <div class="image">
+                        <a href="{{ product.href }}">
+                            <img src="{{ product.thumb }}" alt="{{ product.name }}" title="{{ product.name }}" class="img-fluid" />
+                        </a>
+                    </div>
+                    <div>
+                        <div class="caption">
+                            <h4 class="text-center"><a href="{{ product.href }}">{{ product.name }}</a></h4>
+                            {% if product.price %}
+                            <p class="price"> 
+                                {% if not product.special %}
+                                {{ product.price }}
+                                {% else %} 
+                                <span class="price-new">{{ product.special }}</span> 
+                                <span class="price-old">{{ product.price }}</span> {% endif %}
+                            </p>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
 <div id="common-home" class="container">
     <div class="row">
         {{ column_left }}
@@ -11,232 +144,12 @@
         {% endif %}
         <div id="content" class="{{ class }}"> {{ content_top }}
             {{ content_bottom }} 
-            <div class="row row-cus">
-                <div class="col-lg-3 col-cus d-none d-lg-block">
-                {% if categories %}
-                    <ul class="menu-home">
-                        {% for category in categories %}
-                        {% if category.children %}
-                        <li class="menu-item">
-                            <a href="{{ category.href }}" class="menu-sub"><img src="{{ category.image }}" alt=""> {{ category.name }}</a>
-                            <div class="menu-sub-group">
-                                <div class="sub-group"> 
-                                    {% for children in category.children|batch(category.children|length / category.column|round(1, 'ceil')) %}
-                                    <ul class="list-sub">
-                                        {% for child in children %}
-                                        <li><a href="{{ child.href }}">{{ child.name }}</a></li>
-                                        {% endfor %}
-                                    </ul>
-                                    {% endfor %}
-                                </div>
-                                <a href="{{ category.href }}" class="see-all">{{ text_all }} {{ category.name }}</a> 
-                            </div>
-                        </li>
-                        {% else %}
-                        <li class="menu-item"><a href="{{ category.href }}"><img src="{{ category.image }}" alt=""> {{ category.name }}</a></li>
-                        {% endif %}
-                        {% endfor %}
-                    </ul>
-                {% endif %}
-                </div>
-                <div class="col-lg-6 col-cus">
-                    <div id="demo" class="carousel slide" data-ride="carousel"> 
-                        <!-- Indicators -->
-                        <ul class="carousel-indicators">
-                            {% if banners %}
-                            {% for key, item in banners %}
-                            <li data-target="#demo" data-slide-to="{{ key }}" class="{%if key == '0' %}active{% endif %}"></li>
-                            {% endfor %}
-                            {% endif %}
-                        </ul>
-
-                        <!-- The slideshow -->
-                        <div class="carousel-inner">
-                            {% if banners %}
-                            {% for key, item in banners %}
-                            <div class="carousel-item {% if key == '0' %}active{% endif %}"> 
-                                {% if item.link %}
-                                <a href="{{ item.link }}"><img src="{{ item.image }}" alt="{{ item.title }}" class="img-fluid"></a>
-                                {% else %}
-                                <img src="{{ item.image }}" alt="{{ item.title }}" class="img-fluid"> 
-                                {% endif %}
-                            </div>
-                            {% endfor %}
-                            {% endif %}
-                        </div>
-
-                        <!-- Left and right controls --> 
-                        <a class="carousel-control-prev" href="#demo" data-slide="prev"> <span class="carousel-control-prev-icon"></span> </a> <a class="carousel-control-next" href="#demo" data-slide="next"> <span class="carousel-control-next-icon"></span> </a> 
-                    </div>
-                </div>
-                <div class="col-lg-3 col-cus">
-                    <div class="box-shipping">
-                        <div class="box-head text-center">
-                            THÔNG TIN GIAO NHẬN
-                        </div>
-                        <div class="box-body">
-                            <div class="box-content">
-                                <h5>Giao hàng toàn quốc</h5>
-                                <p>Freeship hóa đơn trên 300k</p>
-                                <a href="#" class="btn btn-detail btn-sm">Chi tiết</a>
-                                <img src="image/info_transport_1.png">
-                            </div>
-                            <div class="box-content">
-                                <h5>Giao hàng kín đáo</h5>
-                                <p>Freeship hóa đơn trên 300k</p>
-                                <a href="#" class="btn btn-detail btn-sm">Chi tiết</a>
-                                <img src="image/info_transport_2.png">
-                            </div>
-                            <div class="box-content">
-                                <h5>Giao hàng trong 2 tiếng</h5>
-                                <p>Freeship hóa đơn trên 300k</p>
-                                <a href="#" class="btn btn-detail btn-sm">Chi tiết</a>
-                                <img src="image/info_transport_3.png">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
+            
             <div class="spacer40"></div>
-            <div class="row row-cus-5">
-                <div class="col-12 col-cus-5">
-                    <h4>THƯƠNG HIỆU</h4>
-                </div>
-                <div class="col-md-2 col-sm-4 col-cus-5">
-                    <a href="#">
-                        <div class="trademark">
-                            <img src="image/vender_image_1.jpg" class="img-fluid" alt="">
-                            <div class="spacer30"></div>
-                            <p class="text-center">Shell</p>
-                            <img src="image/vendor_icon_1.jpg" class="img-ab">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-4 col-cus-5">
-                    <a href="#">
-                        <div class="trademark">
-                            <img src="image/vender_image_2.jpg" class="img-fluid" alt="">
-                            <div class="spacer30"></div>
-                            <p class="text-center">Lexy</p>
-                            <img src="image/vendor_icon_2.jpg" class="img-ab">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-4 col-cus-5">
-                    <a href="#">
-                        <div class="trademark">
-                            <img src="image/vender_image_3.jpg" class="img-fluid" alt="">
-                            <div class="spacer30"></div>
-                            <p class="text-center">Durex</p>
-                            <img src="image/vendor_icon_3.jpg" class="img-ab">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-4 col-cus-5">
-                    <a href="#">
-                        <div class="trademark">
-                            <img src="image/vender_image_4.jpg" class="img-fluid" alt="">
-                            <div class="spacer30"></div>
-                            <p class="text-center">Passion</p>
-                            <img src="image/vendor_icon_4.jpg" class="img-ab">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-4 col-cus-5">
-                    <a href="#">
-                        <div class="trademark">
-                            <img src="image/vender_image_5.jpg" class="img-fluid" alt="">
-                            <div class="spacer30"></div>
-                            <p class="text-center">Azodra</p>
-                            <img src="image/vendor_icon_5.jpg" class="img-ab">
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-2 col-sm-4 col-cus-5">
-                    <a href="#">
-                        <div class="trademark">
-                            <img src="image/vender_image_5.jpg" class="img-fluid" alt="">
-                            <div class="spacer30"></div>
-                            <p class="text-center">Shell</p>
-                            <img src="image/vendor_icon_5.jpg" class="img-ab">
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="spacer30"></div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <h4>Danh mục ngành hàng phổ biến</h4>
-                </div>
-                <div class="col-sm-12">
-                    <div class="box-category">
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                        <div class="category-item text-center">
-                            <a href="#">    
-                                <img src="image/img-cate-1_medium (1).jpg">
-                                <p>Tên danh mục</p>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="spacer30"></div>
             <div class="row">
                 <div class="col-md-12">
-                    <h4>Sản phẩm dành cho bạn</h4>
+                    <h4 class="text-center text-green"><strong>Sản phẩm dành cho bạn</strong></h4>
                 </div>
                 {% for product in products %}
                 <div class="product-layout product-grid col-lg-3 col-md-4 col-sm-6 col-12">
@@ -331,4 +244,28 @@
         {{ column_right }} 
     </div>
 </div>
+<script>
+    $('.owl-carousel').owlCarousel({
+        loop:true,
+        margin:10,
+        nav:false,
+        autoplay:true,
+        autoplayTimeout:3000,
+        autoplayHoverPause:true,
+        responsive:{
+            0:{
+                items:1
+            },
+            576:{
+                items:2
+            },
+            768:{
+                items:3
+            },
+            992:{
+                items:4
+            }
+        }
+    })
+</script>
 {{ footer }}

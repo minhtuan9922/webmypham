@@ -1034,3 +1034,11 @@ h2.price {
     border: none;
     margin-bottom: 0;
 }
+.title-category {
+    background-color: #4eac42;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+}
+.title-category h4 {
+    margin-bottom: 0;
+}

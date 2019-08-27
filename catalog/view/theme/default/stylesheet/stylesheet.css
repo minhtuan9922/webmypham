@@ -356,8 +356,7 @@ header {
 footer {
 	margin-top: 30px;
 	padding-top: 30px;
-	background-color: #303030;
-	border-top: 1px solid #ddd;
+	background-color: #28821d;
 	color: #e2e2e2;
 }
 footer hr {
@@ -384,7 +383,9 @@ footer h5 {
 .breadcrumb {
 	margin: 0 0 20px 0;
 	padding: 8px 0;
-	border: 1px solid #ddd;
+/*	border: 1px solid #ddd;*/
+    border: none;
+    background-color: transparent;
 }
 .breadcrumb i {
 	font-size: 15px;
@@ -403,16 +404,16 @@ footer h5 {
 	content: '';
 	display: block;
 	position: absolute;
-	top: -3px;
+	top: 50%;
 	right: -5px;
-	width: 26px;
-	height: 26px;
+	width: 10px;
+	height: 10px;
 	border-right: 1px solid #DDD;
 	border-bottom: 1px solid #DDD;
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	transform: rotate(-45deg);
+	-webkit-transform: rotate(-45deg) translateY(-50%);
+	-moz-transform: rotate(-45deg) translateY(-50%);
+	-o-transform: rotate(-45deg) translateY(-50%);
+	transform: rotate(-45deg) translateY(-50%);
 }
 .pagination {
 	margin: 0;
@@ -1040,5 +1041,13 @@ h2.price {
     margin-bottom: 20px;
 }
 .title-category h4 {
+    margin-bottom: 0;
+}
+footer .copyright {
+    background-color: #1c5b14;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+footer .copyright p {
     margin-bottom: 0;
 }

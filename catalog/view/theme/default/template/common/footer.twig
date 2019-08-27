@@ -1,5 +1,5 @@
 <footer>
-    <div class="container">
+    <div class="container" hidden="">
         <div class="row"> {% if informations %}
             <div class="col-sm-3">
                 <h5>{{ text_information }}</h5>
@@ -40,7 +40,43 @@
         {# <hr>
         <p>{{ powered }}</p> #}
     </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center">
+                <h4>{{ name }}</h4>
+                <p>{{ address }}</p>
+                <p>{{ telephone }}</p>
+            </div>
+            <div class="col-md-6">
+                <div class="fb-page" data-href="{{ fanpage }}" data-tabs="timeline" data-height="200" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="{{ fanpage }}" class="fb-xfbml-parse-ignore"><a href="{{ fanpage }}"></a></blockquote></div>
+            </div>
+        </div>
+    </div>
+    <div class="spacer30"></div>
+    <div class="copyright">
+        <div class="container text-center">
+            <p>Copyright © 2019. All rights reserved. Designed by QTS</p>
+        </div>
+    </div>
 </footer>
+<script>
+    window.fbAsyncInit = function() {
+    FB.init({
+      appId            : 'your-app-id',
+      autoLogAppEvents : true,
+      xfbml            : true,
+      version          : 'v3.2'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/vi_VN/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 {% for script in scripts %} 
 <script src="{{ script }}" type="text/javascript"></script> 
 {% endfor %} 

@@ -35,6 +35,7 @@ class ControllerCommonFooter extends Controller {
         $data['address'] = $this->config->get('config_address');
         $data['telephone'] = $this->config->get('config_telephone');
         $data['fanpage'] = $this->config->get('config_fanpage');
+        $data['email'] = $this->config->get('config_email');
 
 		// Whos Online
 		if ($this->config->get('config_customer_online')) {
